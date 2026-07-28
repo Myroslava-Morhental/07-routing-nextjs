@@ -24,15 +24,17 @@ function NotePreviewClient({ id }: NotePreviewClientProps) {
   });
 
   if (noteQ.isLoading) {
-    <Modal onClose={closeModal}>
-      return <p>Loading, please wait...</p>
-    </Modal>;
+    return (
+      <Modal onClose={closeModal}>
+        <p>Loading, please wait...</p>
+      </Modal>
+    );
   }
 
   if (noteQ.isError || !noteQ.data) {
     return (
       <Modal onClose={closeModal}>
-        <p>Loading, please wait...</p>
+        <p>Something went wrong</p>
       </Modal>
     );
   }
